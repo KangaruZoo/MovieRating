@@ -1,3 +1,16 @@
+// Set this to the width of one star.
+var starWidth = 40;
+
+$.fn.stars = function () {
+  return $(this).each(function () {
+    $(this).html(
+      $("<span />").width(
+        Math.max(0, Math.min(5, parseFloat($(this).html()))) * starWidth
+      )
+    );
+  });
+};
+
 function refreshData(e) {
   const movieName = e.target.value;
   const url = `http://www.omdbapi.com/?t=${movieName}&apikey=7f9a3b82`;
@@ -10,6 +23,9 @@ function refreshData(e) {
       }
       //if movie exist in database
       else if (data.Response == "True") {
+        //Calculate the rating score
+        const ratingScore = (data.imdbRating / 10) * 5;
+        //Update the HTML with the calculated rating score
         result.innerHTML = `
           <div class="info">
             <div class="div1">
@@ -18,8 +34,7 @@ function refreshData(e) {
             <div class="div2">
               <h2>${data.Title}</h2>
               <div class="rating">
-                <img class="star" src="star-icon.png">
-                <h4>${data.imdbRating}/10</h4>
+                <p><span class="stars">${ratingScore}</span></p>
               </div>
               <div class="details">
                 <span>${data.Rated}</span>
@@ -43,6 +58,8 @@ function refreshData(e) {
             <p>${data.Actors}</p>
           </div>
         `;
+        //Call the stars function to display the rating stars
+        $(".stars").stars();
       }
       //if movie doesn't exist in database
       else {
