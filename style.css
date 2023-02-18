@@ -1,0 +1,150 @@
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"),
+    url(./fonts/MaterialIcons-Regular.woff2) format("woff2"),
+    url(./fonts/MaterialIcons-Regular.woff) format("woff"),
+    url(./fonts/MaterialIcons-Regular.ttf) format("truetype");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+body {
+  margin: 0px;
+  background-color: #1b1b1b;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1.8fr 0fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Div1 Div2"
+    "Div3 Div3";
+}
+.Div1 {
+  grid-area: Div1;
+}
+.Div2 {
+  grid-area: Div2;
+}
+.Div3 {
+  grid-area: Div3;
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 45px;
+  line-height: 1;
+  color: white;
+  position: absolute;
+  margin-top: 63px;
+  left: 35px;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+input {
+  box-sizing: border-box;
+  border: none;
+  margin-top: 30px;
+  margin-left: 50%;
+  transform: translate(-50%);
+  height: 63px;
+  width: 450px;
+  background-color: #1b1b1b;
+  border-radius: 50px;
+  font-size: 35px;
+  padding-left: 60px;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  min-width: 500px;
+  min-height: 126px;
+  width: auto;
+  height: auto;
+  max-height: 700px;
+  max-width: 501px;
+  background-color: #292929;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 40px;
+}
+
+.details {
+  font-size: 20px;
+}
+
+.poster {
+  height: 90%;
+  width: 80%;
+  border-radius: 25px;
+  margin: 25px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.star{
+  margin-right: 10px;
+  height: 24px;
+}
+
+.stream {
+  margin-top: 25px;
+  height: 50px;
+  width: 200px;
+  background-color: #ffa31a;
+  border-radius: 25px;
+  box-shadow: 2px 3px #292929;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: white;
+  font-size: 30px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  margin-top: 10px;
+  margin-left: 25px;
+}
+
+h4 {
+  font-size: 20px;
+  margin: 0;
+}
+
+p {
+  margin: 25px;
+}
+
+input:focus {
+  outline: none;
+}
